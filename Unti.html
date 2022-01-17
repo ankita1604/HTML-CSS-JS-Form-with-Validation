@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reg Form</title>
+    <style type="text/css">
+            body {
+            font-family: Verdana;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(45deg, #e66465, #9198e5);
+        }
+        
+        input[type="text"] {
+            width: 250px;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            width: 77px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+            box-shadow: 0px 6px 10px -5px hsl(0, 0%, 40%), inset 0px 6px 10px -5px rgb(71, 61, 61);
+        }
+        
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+            box-shadow: 10px 6px 8px -5px hsl(0, 0%, 40%), inset 0px 6px 8px -5px black;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        td:last-child {
+            text-align: left;
+            font-weight: italic;
+    </style>
+    <script>
+        function validate() {
+            var fname = document.reg_form.fname;
+            var mname = document.reg_form.mname;
+            var lname = document.reg_form.lname;
+            var age = document.reg_form.age;
+            var email = document.reg_form.email;
+            var mobile = document.reg_form.mobile;
+            var city = document.reg_form.city;
+            var state = document.reg_form.state;
+            var pincode = document.reg_form.pincode;
+
+
+            if (fname.value.length <= 0) {
+                alert("Name is required");
+                fname.focus();
+                return false;
+            }
+            if (fname.value.length > 20) {
+                alert("Please insert correct first name.");
+                fname.focus();
+                return false;
+            }
+            if (mname.value.length > 20) {
+                alert("Please insert correct middle name.");
+                mname.focus();
+                return false;
+            }
+            if (lname.value.length <= 0) {
+                alert("Last Name is required");
+                lname.focus();
+                return false;
+            }
+            if (lname.value.length > 20) {
+                alert("Please insert correct last name.");
+                lname.focus();
+                return false;
+            }
+            if (age.value.length <= 0) {
+                alert("Age is required");
+                age.focus();
+                return false;
+            }
+            if (age.value < 18) {
+                alert("You must be 18 and above to proceed.");
+                age.focus();
+                return false;
+            }
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+                return (true)
+            } else {
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+            if (email.value.length = 0) {
+                alert("Email Id is required");
+                email.focus();
+                return false;
+            }
+            if (mobile.value.length <= 0) {
+                alert("number is required");
+                mobile.focus();
+                return false;
+            }
+            var phoneno = /^\d{10}$/;
+            if ((mobile.value.match(phoneno))) {
+                return true;
+            } else {
+                alert(" incorrect number");
+                return false;
+            }
+
+            if (city.value.length <= 0) {
+                alert("City name is required");
+                city.focus();
+                return false;
+            }
+            if (state.value.length <= 0) {
+                alert("State name is required");
+                state.focus();
+                return false;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Form Validation using HTML,CSS,JavaScript</h1>
+    </center>
+
+    <form method="" action="" name="reg_form" onsubmit="return validate()">
+        <h2>Registration Form</h2>
+        <table>
+            <tr>
+                <td><label>First Name: </label></td>
+                <td>
+                    <input type="text" name="fname" placeholder="First Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Middle Name: </label></td>
+                <td>
+                    <input type="text" name="mname" placeholder="Middle Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name: </label></td>
+                <td>
+                    <input type="text" name="lname" placeholder="Last Name">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Age: </label></td>
+                <td>
+                    <input type="text" name="age" placeholder="Age">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="femele">Female
+                    <input type="radio" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input type="text" name="email" placeholder="example@gmail.com">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Mobile: </label></td>
+                <td>
+                    <input type="number" name="mobile" placeholder="10 digit number">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address: </label>: </label>
+                </td>
+                <td>
+                    <input type="textarea" size="50" name="address" placeholder="Address">
+                </td>
+            </tr>
+            <tr>
+                <td><label>City: </label></td>
+                <td>
+                    <input type="text" name="city" placeholder="City">
+                </td>
+            </tr>
+            <tr>
+                <td><label>State: </label></td>
+                <td>
+                    <input type="text" name="state" placeholder="State">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Pincode: </label></td>
+                <td>
+                    <input type="number" name="pincode" pattern="^[0-9]{6}$" title="Enter Valid Pin Code" placeholder="Pincode">
+                </td>
+
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> I Agree To The Terms & Coditions
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="Submit">
+                        <input type="reset" name="reset" value="Reset">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</body>
+
+</html>
