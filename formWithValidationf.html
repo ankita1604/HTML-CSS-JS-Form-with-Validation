@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reg Form</title>
+    <link rel="stylesheet" href="formStyleUP.css">
+    <script src="Formf.js"></script>
+
+</head>
+
+<body>
+    <center>
+        <h2>Form Validation using HTML,CSS,JavaScript</h2>
+    </center>
+
+    <form action="pageNextf.html" name="reg_form" onsubmit="return validate()">
+        <h3>Registration Form</h3>
+        <table>
+            <tr>
+                <td><label>First Name: </label></td>
+                <td>
+                    <input id="fname" type="text" name="fname" placeholder="First Name">
+                    <span id="formerror-fname"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Middle Name: </label></td>
+                <td>
+                    <input id="mname" type="text" name="mname" placeholder="Middle Name">
+                    <span id="formerror-mname"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name: </label></td>
+                <td>
+                    <input id="lname" type="text" name="lname" placeholder="Last Name">
+                    <span id="formerror-lname"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Age: </label></td>
+                <td>
+                    <input id="age" type="text" name="age" placeholder="Age">
+                    <span id="formerror-age"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="femele">Female
+                    <input type="radio" name="gender" value="other">Other
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email Id: </label></td>
+                <td>
+                    <input id="email" type="text" name="email" placeholder="example@gmail.com">
+                    <span id="formerror-email"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Mobile: </label></td>
+                <td>
+                    <input id="mobile" type="tel" name="mobile" maxlength="10" minlength="10" pattern="[7-9]{1}[0-9]{9}" placeholder="10 digit number">
+                    <span id="formerror-mobile"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address: </label>: </label>
+                </td>
+                <td>
+                    <input id="address" type="text" size="50" name="address" placeholder="Address">
+
+                </td>
+            </tr>
+            <tr>
+                <td><label>City: </label></td>
+                <td>
+                    <input id="city" type="text" name="city" placeholder="City">
+                    <span id="formerror-city"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>State: </label></td>
+                <td>
+                    <input id="state" type="text" name="state" placeholder="State">
+                    <span id="formerror-state"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Pincode: </label></td>
+                <td>
+                    <input id="pincode" type="text" name="pincode" maxlength="6" minlength="6" placeholder="Pincode">
+                    <span id="formerror-pincode"> </span>
+                </td>
+
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> I Agree To The Terms & Coditions
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="submit" onclick="passvalues">
+                        <input type="reset" name="reset" value="Reset">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</body>
+
+</html>

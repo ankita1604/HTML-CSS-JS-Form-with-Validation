@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <h2>SUCCESS PAGE</h2>
+    <script>
+        function getParameter(parameterName) {
+            let parameters = new URLSearchParams(window.location.search);
+            return parameters.get(parameterName);
+        }
+        console.log(getParameter('fname'));
+        console.log(getParameter('mname'));
+        console.log(getParameter('lname'));
+        console.log(getParameter('age'));
+        console.log(getParameter('email'));
+        console.log(getParameter('mobile'));
+        console.log(getParameter('address'));
+        console.log(getParameter('pincode'));
+        console.log(getParameter('city'));
+        console.log(getParameter('state'));
+    </script>
+</head>
+
+<body>
+    success..
+
+
+</body>
+
+</html>
